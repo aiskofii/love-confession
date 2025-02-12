@@ -1,0 +1,47 @@
+body {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.hearts-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between hearts */
+    flex-wrap: nowrap; /* Ensure they stay in a single line */
+    width: 100%; /* Make sure they stretch across */
+    overflow-x: auto; /* Allows scrolling if they overflow */
+    padding: 20px 0;
+}
+
+
+.heart {
+    margin: 10px;
+}
+
+.heart img {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}
+
+.typewriter {
+    margin-top: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    min-height: 30px; /* Prevents layout shift */
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
