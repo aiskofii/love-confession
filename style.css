@@ -6,6 +6,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding: 10px; /* Add some breathing space */
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .hearts-container {
@@ -22,6 +26,7 @@ body {
 
 .heart {
     margin: 10px;
+    padding: 10px; /* Makes it easier to tap */
 }
 
 .heart img {
@@ -39,9 +44,42 @@ body {
     overflow: hidden;
     text-align: center;
     min-height: 30px; /* Prevents layout shift */
+    max-width: 90%;
+    word-break: break-word; /* Ensures text never overflows */
 }
 
 @keyframes blink-caret {
     from, to { border-color: transparent; }
     50% { border-color: black; }
+}
+
+@media screen and (max-width: 768px) {  
+    .hearts-container {
+        flex-wrap: wrap;  /* Wrap hearts into rows if the screen is small */
+        gap: 5px;  /* Reduce spacing */
+    }
+
+    .heart img {
+        width: 40px; /* Slightly smaller hearts for mobile */
+    }
+
+    .typewriter {
+        font-size: 18px; /* Reduce text size on mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {  
+    .hearts-container {
+        flex-direction: column;  /* Stack hearts vertically for very small screens */
+        gap: 2px;
+    }
+
+    .heart img {
+        width: 35px; /* Even smaller hearts */
+    }
+
+    .typewriter {
+        font-size: 16px; 
+        text-align: center;
+    }
 }

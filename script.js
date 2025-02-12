@@ -5,15 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
     hearts.forEach(heart => {
         heart.addEventListener("click", () => {
             const text = heart.getAttribute("data-text");
-            typewriterText.innerHTML = ""; // Clear text before new typing starts
-            typewriterText.style.width = "auto"; // Ensure it's not stuck at 0
+            typewriterText.innerHTML = ""; 
 
             let index = 0;
+            let speed = window.innerWidth < 768 ? 50 : 100; // Faster typing on mobile
+
             function type() {
                 if (index < text.length) {
                     typewriterText.innerHTML += text.charAt(index);
                     index++;
-                    setTimeout(type, 100); // Typing speed
+                    setTimeout(type, speed);
                 }
             }
 
