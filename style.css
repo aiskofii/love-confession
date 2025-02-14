@@ -83,3 +83,49 @@ body {
         text-align: center;
     }
 }
+
+footer {
+    margin-top: 19cm;
+    margin-left: 96%;
+    width: 100%;
+    font-size: 14px;
+    color: black;
+    text-align: center;
+    position: absolute;
+
+}
+
+.loveletter img {
+    width: 200px;
+    position: relative;
+    top: 0;
+    display: block;
+    cursor: pointer;
+}
+
+.love-content {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9); /* Dark overlay effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden; /* Prevents weird scrolling */
+}
+
+.love-content img {
+    width: 90%; /* Adjust to fit screen */
+    max-width: 600px; /* Prevent it from being too wide */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.love-content img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
