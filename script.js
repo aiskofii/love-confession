@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             clearTimeout(typingTimeout); // Clear previous typing effect
 
             let index = 0;
-            let speed = window.innerWidth < 768 ? 30 : 60; // Faster typing on mobile
+            let speed = window.innerWidth < 768 ? 20 : 40; // Faster typing on mobile & tablets
 
             function type() {
                 if (index < text.length) {
@@ -74,6 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
     letterContent.style.height = `${window.innerHeight}px`; // Fit screen height
     letterContent.style.justifyContent = "center";
     letterContent.style.alignItems = "center";
+    letterContent.style.overflow = "hidden"; // Prevent scrolling issues
+    letterContent.style.touchAction = "none"; // Prevent unwanted gestures
 
     letterClick.addEventListener("click", () => {
         letterContent.style.display = "flex"; // Show in full-screen mode
@@ -91,4 +93,14 @@ document.addEventListener("DOMContentLoaded", () => {
         letterContent.style.width = `${window.innerWidth}px`;
         letterContent.style.height = `${window.innerHeight}px`;
     });
+
+    // Mobile-friendly adjustments
+    if (window.innerWidth < 768) {
+        document.body.style.padding = "5px"; // More compact spacing
+        hearts.forEach(heart => {
+            heart.style.padding = "5px";
+            heart.style.margin = "5px";
+        });
+        typewriterText.style.fontSize = "16px"; // Readable size for mobile
+    }
 });
