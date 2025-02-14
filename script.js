@@ -70,12 +70,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     // Hide letter content initially
     letterContent.style.display = "none";
-    letterContent.style.width = `${window.innerWidth}px`; // Fit screen width
-    letterContent.style.height = `${window.innerHeight}px`; // Fit screen height
+    letterContent.style.width = "100vw"; // Fit screen width
+    letterContent.style.height = "100vh"; // Fit screen height
     letterContent.style.justifyContent = "center";
     letterContent.style.alignItems = "center";
     letterContent.style.overflow = "hidden"; // Prevent scrolling issues
     letterContent.style.touchAction = "none"; // Prevent unwanted gestures
+    letterContent.style.objectFit = "contain"; // Ensure it scales properly
 
     letterClick.addEventListener("click", () => {
         letterContent.style.display = "flex"; // Show in full-screen mode
@@ -90,8 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Adjust size on window resize
     window.addEventListener("resize", () => {
-        letterContent.style.width = `${window.innerWidth}px`;
-        letterContent.style.height = `${window.innerHeight}px`;
+        letterContent.style.width = "100vw";
+        letterContent.style.height = "100vh";
     });
 
     // Mobile-friendly adjustments
