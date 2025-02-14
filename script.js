@@ -70,13 +70,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     // Hide letter content initially
     letterContent.style.display = "none";
+    letterContent.style.position = "fixed";
+    letterContent.style.top = "0";
+    letterContent.style.left = "0";
     letterContent.style.width = "100vw"; // Fit screen width
     letterContent.style.height = "100vh"; // Fit screen height
     letterContent.style.justifyContent = "center";
     letterContent.style.alignItems = "center";
     letterContent.style.overflow = "hidden"; // Prevent scrolling issues
     letterContent.style.touchAction = "none"; // Prevent unwanted gestures
-    letterContent.style.objectFit = "contain"; // Ensure it scales properly
+    letterContent.style.objectFit = "cover"; // Ensure it scales properly and covers screen
 
     letterClick.addEventListener("click", () => {
         letterContent.style.display = "flex"; // Show in full-screen mode
@@ -98,6 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Mobile-friendly adjustments
     if (window.innerWidth < 768) {
         document.body.style.padding = "5px"; // More compact spacing
+        document.body.style.overflow = "hidden"; // Prevent zooming and scrolling
+        document.documentElement.style.overflow = "hidden"; // Ensure no scrollbars
+        document.documentElement.style.touchAction = "none"; // Disable unwanted touch gestures
         hearts.forEach(heart => {
             heart.style.padding = "5px";
             heart.style.margin = "5px";
