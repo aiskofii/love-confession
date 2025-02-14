@@ -85,8 +85,7 @@ body {
 }
 
 footer {
-    margin-top: 19cm;
-    margin-left: 96%;
+    margin-top: 17cm; /* Pushes footer to the bottom */
     width: 100%;
     font-size: 14px;
     color: black;
